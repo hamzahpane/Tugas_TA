@@ -1,0 +1,113 @@
+import {StyleSheet} from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#B01116',
+    paddingVertical: 20,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  container1: {
+    width: 141,
+    height: 48,
+    marginTop: 20,
+    marginLeft: 75,
+    marginRight: 75,
+    justifyContent: 'center',
+    elevation: 50,
+  },
+  container2: {
+    backgroundColor: '#FBF9FA',
+    paddingVertical: 10,
+    marginTop: 22,
+    paddingHorizontal: 15,
+    borderRadius: 40,
+    marginRight: 20,
+    elevation: 50,
+  },
+  container3: {
+    fontFamily: 'Poppins-Bold',
+    color: '#DF2A31',
+    fontWeight: 'bold',
+  },
+  container4: {
+    backgroundColor: 'white',
+    marginTop: 32,
+    flex: 6,
+    height: 200,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
+  container5: {
+    backgroundColor: '#DF2A31',
+    borderRadius: 10,
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+    marginTop: 20,
+    marginRight: 50,
+    elevation: 10,
+  },
+  container6: {
+    marginTop: 10,
+    fontSize: 12,
+    color: '#263238',
+    marginLeft: 2,
+    fontFamily: 'Poppins-Medium',
+    fontWeight: '600',
+  },
+
+  container7: {
+    backgroundColor: '#DF2A31',
+    borderRadius: 10,
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+    marginTop: 20,
+    marginRight: 50,
+    elevation: 10,
+  },
+  container8: {
+    marginTop: 10,
+    fontSize: 12,
+    color: '#263238',
+    marginLeft: 2,
+    fontFamily: 'Poppins-Medium',
+    fontWeight: '600',
+  },
+
+  b1: {
+    backgroundColor: '#DF2A31',
+    borderRadius: 10,
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+    marginTop: 20,
+    marginRight: 50,
+    elevation: 10,
+  },
+  b2: {
+    marginTop: 10,
+    fontSize: 12,
+    color: '#263238',
+    marginLeft: 2,
+    fontFamily: 'Poppins-Medium',
+    fontWeight: '600',
+    marginLeft: 15,
+  },
+  b3: {
+    backgroundColor: '#DF2A31',
+    borderRadius: 10,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    marginTop: 20,
+    elevation: 10,
+  },
+  b4: {
+    marginTop: 10,
+    fontSize: 12,
+    color: '#263238',
+    marginLeft: 17,
+    fontFamily: 'Poppins-Medium',
+    fontWeight: '600',
+  },
+});
+
+export default styles;
