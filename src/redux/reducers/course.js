@@ -1,6 +1,7 @@
 const initialState = {
   courses: [],
   timeline: [],
+  lihatCourse: {},
 };
 
 const courseReducer = (state = initialState, action) => {
@@ -9,6 +10,11 @@ const courseReducer = (state = initialState, action) => {
       return {
         ...state,
         courses: action.payload,
+      };
+    case 'GET_COURSE':
+      return {
+        ...state,
+        lihatCourse: action.payload,
       };
     case 'GET_TIMELINE':
       return {

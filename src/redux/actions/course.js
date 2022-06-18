@@ -5,6 +5,13 @@ export const getCourses = courses => {
   };
 };
 
+export const getCourse = course => {
+  return {
+    type: 'GET_COURSE',
+    payload: course,
+  };
+};
+
 export const getTimeline = timeline => {
   return {
     type: 'GET_TIMELINE',

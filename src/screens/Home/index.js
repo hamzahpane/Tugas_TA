@@ -19,8 +19,12 @@ import styles from './style';
 // import useAuth from '../../hooks/UseAuth';
 // import useCourses from '../../hooks/useCourse';
 import {useSelector, useDispatch} from 'react-redux';
-import {getDueDates, trimCoursesData} from '../../Api/moodle/courses';
-import {getCourses, getTimeline} from '../../redux/actions/course';
+import {
+  getDueDates,
+  trimCoursesData,
+  getCourseInfo,
+} from '../../Api/moodle/courses';
+import {getCourses, getTimeline, getCourse} from '../../redux/actions/course';
 
 function Home({navigation}) {
   const userToken = useSelector(state => state.userState.userToken); // ini juga
@@ -30,6 +34,7 @@ function Home({navigation}) {
   const coursesData = useSelector(state => state.courseState.courses); // ini juga
   const timelineData = useSelector(state => state.courseState.timeline); //ini juga
   const states = useSelector(state => state);
+  const courseInfo = useSelector(state => state.courseState.lihatCourse);
   const dispatch = useDispatch(); //ini juga
 
   // console.log('States: ', states);
@@ -51,11 +56,9 @@ function Home({navigation}) {
   //   fetchTimeline();
   // }, [coursesData]); // ini juga
 
-  console.log('===REDUX COURSE===');
-  console.log('Course Data: ');
-  console.log(coursesData);
-  console.log('Timeline Data: ');
-  console.log(timelineData);
+  // console.log('===REDUX===');
+  // console.log('Course Info: ');
+  // console.log(courseInfo);
 
   return (
     <View style={{flex: 1, backgroundColor: '#B01116'}}>

@@ -1,8 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList, Touchable} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-import {getDueDates, trimCoursesData} from '../../../Api/moodle/courses';
-import {getCourses, getTimeline} from '../../../redux/actions/course';
+import {
+  getDueDates,
+  trimCoursesData,
+  getCourseInfo,
+} from '../../../Api/moodle/courses';
+import {
+  getCourses,
+  getTimeline,
+  getCourse,
+} from '../../../redux/actions/course';
 import styles from '../Course/style';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -10,6 +18,7 @@ import * as Progress from 'react-native-progress';
 function Course({navigation}) {
   const coursesData = useSelector(state => state.courseState.courses);
   const userToken = useSelector(state => state.userState.userToken);
+  const courseInfo = useSelector(state => state.courseState.lihatCourse);
   const userID = useSelector(state => state.userState.userID);
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
@@ -20,9 +29,22 @@ function Course({navigation}) {
     setIsLoading(true);
   };
 
+  const fetchCourseInfo = async () => {
+    const courseReq = await getCourseInfo(userToken, 3, 'upi tzy');
+    dispatch(getCourse(courseReq)); // ini di copy
+  };
+
   useEffect(() => {
     fetchCourses();
   }, []);
+
+  useEffect(() => {
+    fetchCourseInfo();
+  }, []);
+
+  console.log('===REDUX===');
+  console.log('Course Info: ');
+  console.log(courseInfo);
 
   // const course = coursesData[0].name;
 

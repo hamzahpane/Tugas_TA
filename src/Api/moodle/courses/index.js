@@ -57,4 +57,31 @@ export const getDueDates = async (token, courses) => {
   return dueDates;
 };
 
+export const getCourseInfo = async (token, courseId, courseName) => {
+  const topics = await getCourseContents(token, courseId);
+  let deskripsiMatkul = '';
+  const kumpulanTopik = [];
+  for (const topic of topics) {
+    if (topic.name === 'General') {
+      deskripsiMatkul = topic.summary;
+    } else {
+      kumpulanTopik.push({
+        id: topic.id,
+        name: topic.name,
+        visible: topic.visible,
+        deskripsi: topic.summary,
+        modules: topic.modules,
+      });
+    }
+  }
+  const infoCourse = {
+    id: courseId,
+    name: courseName,
+    deskripsi: deskripsiMatkul,
+    kumpulanTopik,
+  };
+
+  return infoCourse;
+};
+
 export default getUserCourses;
